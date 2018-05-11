@@ -1,0 +1,127 @@
+<div class="header">
+  <h1>{{playerCtrl.player.First_Name}} {{playerCtrl.player.Last_Name}}</h1>
+</div>
+
+<table class="table table-condensed table-hover">
+  <tbody>
+    <tr>
+      <th>Projected Points</th><td>{{playerCtrl.player.Projected | number:0}}</td>
+    </tr>
+      <tr>
+        <th>Last Name</th>
+        <td>
+          <input type="text" ng-model="playerCtrl.player.Last_Name" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+        </td>
+      </tr>
+
+    <tr>
+      <th>
+        First Name
+      </th>
+      <td>
+        <input type="text" ng-model="playerCtrl.player.First_Name" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        Team
+      </th>
+      <td>
+        <input type="text" ng-model="playerCtrl.player.Team" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        Position
+      </th>
+      <td>
+        <input type="text" ng-model="playerCtrl.player.Position" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        Pass Yards
+      </th>
+      <td>
+        <input type="number" ng-model="playerCtrl.player.Pass_Yards" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        Pass TDs
+      </th>
+      <td>
+        <input type="number" ng-model="playerCtrl.player.Pass_TDs" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+      </td>
+    </tr>
+
+
+    <tr>
+      <th>
+        Interceptions
+      </th>
+      <td>
+        <input type="number" ng-model="playerCtrl.player.Pass_Ints" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        Rush Yards
+      </th>
+      <td>
+        <input type="number" ng-model="playerCtrl.player.Rush_Yards" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        Rush TDs
+      </th>
+      <td>
+        <input type="number" ng-model="playerCtrl.player.Rush_TDs" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        Fumbles
+      </th>
+      <td>
+        <input type="number" ng-model="playerCtrl.player.Fumbles_Lost" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        Receiving Yards
+      </th>
+      <td>
+        <input type="number" ng-model="playerCtrl.player.Rec_Yards" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        Receiving TDs
+      </th>
+      <td>
+        <input type="number" ng-model="playerCtrl.player.Rec_TD" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        Receptions
+      </th>
+      <td>
+        <input type="number" ng-model="playerCtrl.player.Receptions" ng-change="playerCtrl.save()" ng-model-options="{updateOn: 'blur'}"/>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

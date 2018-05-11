@@ -1,0 +1,18 @@
+<div class="header">
+  <h1>Scoring Settings</h1>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td ng-repeat="setting in scoringCtrl.scoring">{{setting.$id}} </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr >
+      <td ng-repeat="setting in scoringCtrl.scoring">
+        <input type="number" ng-model="setting.$value" ng-change="scoringCtrl.save(setting)" ng-model-options="{updateOn: 'blur'}">
+      </td>
+    </tr>
+  </tbody>
+</table>
