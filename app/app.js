@@ -91,8 +91,13 @@ angular
         templateUrl: 'games/games.html',
         controller: 'GamesCtrl as gamesCtrl',
         resolve: {
-          games: function(Games){
-            return Games.games.$loaded();
+          games: function(Auth, Users, Games){
+              return Auth.$requireSignIn().then(function(auth){
+                  return Users.getProfile(auth.uid).$loaded();
+              }).then(function(profile){
+                  return Games.getGames(profile.liChessUsername);
+              });
+
           }
         }
       })
@@ -102,7 +107,7 @@ angular
         controller: 'GameCtrl as gameCtrl',
         resolve: {
           game: function($stateParams, Games){
-            return Games.games.$loaded().then(function(games){
+            return Games.getGames().then(function(games){
               return game[$stateParams.gameId]
             });
           }
