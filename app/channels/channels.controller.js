@@ -1,4 +1,4 @@
-angular.module('lazHack5')
+angular.module('lazHack7')
   .controller('ChannelsCtrl', function($state, Auth, Users, profile){
     var channelsCtrl = this;
     Users.setOnline(profile.$id);

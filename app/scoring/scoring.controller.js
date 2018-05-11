@@ -1,4 +1,4 @@
-angular.module('lazHack5')
+angular.module('lazHack7')
   .controller('ScoringCtrl', function(scoring, $mdToast){
     var scoringCtrl = this;
     scoringCtrl.scoring = scoring;

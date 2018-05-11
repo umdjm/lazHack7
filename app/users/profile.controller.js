@@ -1,4 +1,4 @@
-angular.module('lazHack5')
+angular.module('lazHack7')
   .controller('ProfileCtrl', function($state, md5, auth, profile){
     var profileCtrl = this;
     profileCtrl.profile = profile;

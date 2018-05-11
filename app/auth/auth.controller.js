@@ -1,4 +1,4 @@
-angular.module('lazHack5')
+angular.module('lazHack7')
   .controller('AuthCtrl', function(Auth, $state){
     var authCtrl = this;
 

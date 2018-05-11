@@ -1,6 +1,6 @@
 'use strict';
 angular
-  .module('lazHack5', [
+  .module('lazHack7', [
     'firebase',
     'angular-md5',
     'ui.router',
@@ -86,44 +86,25 @@ angular
           }
         }
       })
-      .state('channels.players', {
-        url: '/players',
-        templateUrl: 'players/players.html',
-        controller: 'PlayersCtrl as playersCtrl',
+      .state('channels.games', {
+        url: '/games',
+        templateUrl: 'games/games.html',
+        controller: 'GamesCtrl as gamesCtrl',
         resolve: {
-          scoring: function(Players){
-            return Players.scoring.$loaded();
-          },
-          players: function(Players){
-            return Players.players.$loaded();
+          games: function(Games){
+            return Games.games.$loaded();
           }
         }
       })
-      .state('channels.editPlayer', {
-        url: '/players/{playerId}',
-        templateUrl: 'players/player.html',
-        controller: 'PlayerCtrl as playerCtrl',
+      .state('channels.editGame', {
+        url: '/games/{gameId}',
+        templateUrl: 'games/game.html',
+        controller: 'GameCtrl as gameCtrl',
         resolve: {
-          scoring: function(Players){
-            return Players.scoring.$loaded();
-          },
-          players: function($stateParams, Players){
-            return Players.players.$loaded();
-          },
-          player: function($stateParams, Players){
-            return Players.players.$loaded().then(function(players){
-              return players[$stateParams.playerId]
+          game: function($stateParams, Games){
+            return Games.games.$loaded().then(function(games){
+              return game[$stateParams.gameId]
             });
-          }
-        }
-      })
-      .state('channels.scoring', {
-        url: '/scoring',
-        templateUrl: 'scoring/scoring.html',
-        controller: 'ScoringCtrl as scoringCtrl',
-        resolve: {
-          scoring: function(Players){
-            return Players.scoring.$loaded();
           }
         }
       });
@@ -133,12 +114,12 @@ angular
   .constant('FirebaseUrl', 'https://slack.firebaseio.com/')
   .config(function(){
     var config = {
-      apiKey: "AIzaSyAhapE6LNS75JgfDNxze6Zpzi2z7yY64gk",
-      authDomain: "lazhack5-1293e.firebaseapp.com",
-      databaseURL: "https://lazhack5-1293e.firebaseio.com",
-      projectId: "lazhack5-1293e",
-      storageBucket: "lazhack5-1293e.appspot.com",
-      messagingSenderId: "954306478427"
+        apiKey: "AIzaSyBi7Wd_TwCZaSisrcX6QnsVdHe5UbE4MuQ",
+        authDomain: "lazhack7-3b615.firebaseapp.com",
+        databaseURL: "https://lazhack7-3b615.firebaseio.com",
+        projectId: "lazhack7-3b615",
+        storageBucket: "lazhack7-3b615.appspot.com",
+        messagingSenderId: "95900897913"
     };
     firebase.initializeApp(config);
   });

@@ -1,4 +1,4 @@
-angular.module('lazHack5')
+angular.module('lazHack7')
   .factory('Users', function($firebaseArray, $firebaseObject){
     var usersRef = firebase.database().ref('users');
     var users = $firebaseArray(usersRef);
