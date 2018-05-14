@@ -2,7 +2,8 @@
   "name": "angularfireslack",
   "version": "0.0.0",
   "dependencies": {
-    "firebase-admin": "^5.0.0"
+    "firebase-admin": "^5.0.0",
+    "pgnToJSON": "0.0.7"
   },
   "repository": {},
   "devDependencies": {

@@ -9,9 +9,12 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
+    "cors": "^2.8.4",
     "firebase-admin": "~5.8.1",
     "firebase-functions": "^0.8.1",
-    "mqtt": "^2.15.2"
+    "node-rest-client": "^3.1.0",
+    "pgnToJSON": "0.0.7",
+    "request": "^2.85.0"
   },
   "private": true
 }

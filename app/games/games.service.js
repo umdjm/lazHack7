@@ -3,16 +3,19 @@ angular.module('lazHack7')
     //var gamesRef = firebase.database().ref('games');
 
     function getLiChessGames(username){
-        var url = "http://localhost:9000/api/games/export/" + username;
-        var config = {headers:  {
-            'Authorization': 'Bearer sX0DkQk9aKvyCJjf',
-            'Accept': 'application/json'
-        }
-        };
-        return $http.get(url, config)
+        var url = "https://us-central1-lazhack7-3b615.cloudfunctions.net/games?username=" + username;
+        return $http.get(url)
             .then(function(result){
-                console.log(result);
+                var gameStrings = result.data.replace(/(\r\n|\n|\r)/gm,"\n").split("\n");
+                var games = [];
+                gameStrings.forEach(function(str) {
+                    try {
+                        games.push(JSON.parse(str));
+                    } catch(e){
 
+                    }
+                });
+                return games;
             });
     }
 

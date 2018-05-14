@@ -9,15 +9,19 @@ exports.games = functions.https.onRequest(function(req, res){
     var options = {
         url: "https://lichess.org/games/export/" + req.query.username,
         headers: {
-            'Authorization': 'Bearer sX0DkQk9aKvyCJjf',
-            'Accept': 'application/json'
+            'Accept': 'application/x-ndjson'
         }
     };
-    return request(options, function(error, response, body) {
-        if (!error && response.statusCode == 200) {
-            var info = JSON.parse(body);
-            res.status(200).send(info);
+    request(options, function(error, response, body) {
+        if (error || response.statusCode != 200) {
+            return res.status(response.statusCode);
         }
+
+        res.status(200)
+            .set('Access-Control-Allow-Origin', "*")
+            .set('Access-Control-Allow-Methods', 'GET, POST')
+            .type('text/plain')
+            .send(body)
     });
 });
 
